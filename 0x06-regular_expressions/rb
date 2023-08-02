@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+def match_regex(argument)
+  regex = /#{argument}/
+  puts "Enter a string to match against the regular expression:"
+  string = gets.chomp
+  if string.match(regex)
+    puts "Match found!"
+  else
+    puts "No match found."
+  end
+end
+
+match_regex(ARGV[0])
