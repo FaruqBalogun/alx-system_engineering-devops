@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Connects to my school server
+# The -i flag allows you to specify a different private key file.
+# IT is also used to the specify the path to the identity(Privae key) file to use  for authentication. Automatically, SSH looks for the private key in the  ~/.ssh/school/id_rsa file
+
+ssh -i ~/.ssh/school ubuntu@3.90.85.154
