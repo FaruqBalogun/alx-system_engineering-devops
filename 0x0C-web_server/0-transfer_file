@@ -1,22 +1,18 @@
 #!/usr/bin/env bash
-# Bash script that transfers file from client(ALX) to a server
+#Script that transfers a file from our client to a server
 
-# Function to display usage
-display_usage() {
-    echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
-}
-
-# Checks the number of arguments
-if [ "$#" -lt 4 ]; then
-    display_usage
-    exit 1
+# Check if all parameters are provided
+if [ $# -lt 4 ]; then
+  echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+  exit 1
 fi
 
-# Assign parameters to variables
-FILE_PATH=$1
-SERVER_IP=$2
-USERNAME=$3
-SSH_KEY_PATH=$4
+file_path=$1
+server_ip=$2
+username=$3
+ssh_key=$4
 
-# Construct the scp command with necessary options
-	scp -o "StrictHostKeyChecking=no -i $SSH_KEY_PATH $FILE_PATH $USERNAME@$SERVER_IP":~/;
+# Transfer the file using scp
+scp -o StrictHostKeyChecking=no -i "$ssh_key" "$file_path" "$username@$server_ip:~/"
+
+exit 0
