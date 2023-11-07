@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""my Function to count words in all hot posts of a given Reddit subreddit."""
+"""My Function to count words in all hot posts of a given Reddit subreddit."""
 import requests
 
 
@@ -52,3 +52,4 @@ def count_words(subreddit, word_list, instances={}, after="", count=0):
         instances = sorted(instances.items(), key=lambda kv: (-kv[1], kv[0]))
         [print("{}: {}".format(k, v)) for k, v in instances]
     else:
+        count_words(subreddit, word_list, instances, after, count)
