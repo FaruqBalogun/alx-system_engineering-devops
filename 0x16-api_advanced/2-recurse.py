@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this function is used to return top 10 hot posts of a given subreddit """
+"""This function is used to return top 10 hot posts of a given subreddit """
 import requests
 import sys
 after = None
